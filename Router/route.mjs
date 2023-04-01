@@ -24,7 +24,7 @@ const routerApi = (app) => {
   router.put("/updateUser", auth, handleApi.updateUser);
   //Method DELETE
   router.get("/", (req, res) => {
-    return res.status(200).json({
+    return res.status(200).send({
       message: "Xin chào",
     });
   });
