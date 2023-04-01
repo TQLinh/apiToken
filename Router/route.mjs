@@ -23,6 +23,11 @@ const routerApi = (app) => {
   //Method PUT
   router.put("/updateUser", auth, handleApi.updateUser);
   //Method DELETE
+  router.get("/", (req, res) => {
+    return res.status(200).json({
+      message: "Xin chào",
+    });
+  });
   return app.use("/api/auth", router);
 };
 export { routerApi };
