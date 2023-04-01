@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 routerApi(app);
-use.get("/", function (req, res) {
+app.get("/", function (req, res) {
   return res.status(200).send({ mes: "hi" });
 });
 //port
