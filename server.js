@@ -18,9 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 routerApi(app);
-app.get("/", function (req, res) {
-  return res.status(200).send({ mes: "hi" });
-});
+
 //port
 const port = process.env.PORT || 8080;
 

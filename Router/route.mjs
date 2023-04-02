@@ -1,6 +1,7 @@
 import { Router } from "express";
 import handleApi from "../controller/controllerApi.mjs";
 import vetifyToken, { auth, localVariables } from "../middleware/auth.mjs";
+import User from "../module/user.mjs";
 const router = Router();
 const routerApi = (app) => {
   //Method POST
@@ -23,10 +24,16 @@ const routerApi = (app) => {
   //Method PUT
   router.put("/updateUser", auth, handleApi.updateUser);
   //Method DELETE
-  router.get("/", (req, res) => {
-    return res.status(200).send({
-      message: "Xin chào",
-    });
+
+  router.get("/", async function (req, res) {
+    try {
+      const data = await User.find();
+      return res.status(200).send({ mes: "hi", data });
+    } catch (error) {
+      return res.status(404).json({
+        err: error,
+      });
+    }
   });
   return app.use("/api/auth", router);
 };

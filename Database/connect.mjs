@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
-const url = "mongodb://localhost:27017/auth";
-mongoose.set("strictQuery", true);
+const url =
+  "mongodb+srv://shop_milk:IdQyQ5C6ZR6dLb5D@shopmilk.bi52laq.mongodb.net/?retryWrites=true&w=majority";
+//localhost:27017/auth
+// mongodb+srv://shop_milk:IdQyQ5C6ZR6dLb5D@shopmilk.bi52laq.mongodb.net/?retryWrites=true&w=majority
+mongodb: mongoose.set("strictQuery", true);
 mongoose
   .connect(url, {
     useNewUrlParser: true,
