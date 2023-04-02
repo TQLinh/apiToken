@@ -25,10 +25,10 @@ const routerApi = (app) => {
   router.put("/updateUser", auth, handleApi.updateUser);
   //Method DELETE
 
-  router.get("/", async function (req, res) {
+  router.get("/", async (req, res) => {
     try {
-      const data = await User.find({});
-      return res.status(200).send({ mes: "hi", data });
+      const data = await User.find();
+      return res.status(200).json({ mes: "hi", data });
     } catch (error) {
       return res.status(401).json({
         err: error,
