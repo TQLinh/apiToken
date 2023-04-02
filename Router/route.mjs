@@ -27,10 +27,10 @@ const routerApi = (app) => {
 
   router.get("/", async function (req, res) {
     try {
-      const data = await User.find();
+      const data = await User.find({});
       return res.status(200).send({ mes: "hi", data });
     } catch (error) {
-      return res.status(404).json({
+      return res.status(401).json({
         err: error,
       });
     }
