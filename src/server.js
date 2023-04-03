@@ -1,10 +1,10 @@
 import express from "express";
-import "./Database/connect.mjs";
+import "../Database/connect.mjs";
 import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
 import morgan from "morgan";
-import { routerApi } from "./Router/route.mjs";
+import { routerApi } from "../Router/route.mjs";
 const app = express();
 dotenv.config();
 const router = express.Router();
