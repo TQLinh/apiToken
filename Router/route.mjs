@@ -31,6 +31,7 @@ const routerApi = (app) => {
       if (data) {
         return await res.status(200).json({ mes: "hi", data });
       }
+      return await res.status(200).json({ mes: "hi" });
     } catch (error) {
       return res.status(401).json({
         err: error,
